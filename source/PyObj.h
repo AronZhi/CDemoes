@@ -5,11 +5,11 @@ class PyObj
 {
     public:
     PyObj();
-    ~PyObj();
+    virtual ~PyObj();
 
     bool Init();
     void Run();
     void Release();
-}
+};
 
 #endif // PY_OBJ
