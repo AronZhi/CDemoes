@@ -1,0 +1,15 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.11)
+
+PROJECT(CMakeDemo)
+
+INCLUDE_DIRECTORIES(/home/ubuntuk7/Public/PublicSource source) #添加头文件路径
+
+ADD_SUBDIRECTORY(source) #添加子目录
+AUX_SOURCE_DIRECTORY(. DIR_SRCS) #添加主目录
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14") #指定C++标准
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb") # Debug模式下的编译指令
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall") # Release模式下的编译指令
+
+ADD_EXECUTABLE(CMakeDemo ${DIR_SRCS})
+TARGET_LINK_LIBRARIES(CMakeDemo DemoLib)
