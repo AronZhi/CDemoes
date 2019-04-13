@@ -1,8 +1,12 @@
-#include "Charpter2.h"
+#include "PyObj.h"
 
 int main()
 {
-    Charpter2 demo{1,2,3,4,5,6,7,8};
-    demo.print();
+    PyObj pyobj;
+    if (!pyobj.Create("/home/zyw/Documents/Demo/script", "HelloPython"))
+        return -1;
+    
+    pyobj.Run("Hello");
+    pyobj.Delete();
     return 0;
 }
