@@ -1,5 +1,4 @@
 #include "PyObj.h"
-#include <iostream>
 #include <boost/format.hpp>
 
 PyObj::PyObj()
@@ -18,20 +17,18 @@ int8_t PyObj::Create(const std::string& path, const std::string& fileName)
     Py_Initialize();
     if (!Py_IsInitialized())
     {
-        std::cout << -1 << std::endl;
         return -1;
     }
         
     
     PyRun_SimpleString("import sys");
 
-    std::string filePath = (boost::format("sys.path.append('%s')") % filePath.c_str()).str();
+    std::string filePath = (boost::format("sys.path.append('%s')") % path.c_str()).str();
     PyRun_SimpleString(filePath.c_str());
 
     _obj = PyImport_ImportModule(fileName.c_str());
     if (!_obj)
     {
-        std::cout << -2 << std::endl;
         return -2;
     }
 }
