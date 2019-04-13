@@ -13,8 +13,8 @@ public:
     int8_t Create(const std::string& path, const std::string& fileName);
     void Delete();
 
-    void Run(const std::string& funcName);
-    
+    int8_t Run(const std::string& funcName);
+
 private:
     PyObject* _obj;
 };
