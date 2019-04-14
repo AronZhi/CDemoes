@@ -16,8 +16,7 @@ int main()
         std::cout << "Hello Fail: " << ret << std::endl;
     }
 
-    int number = 0;
-    number = pyobj.Fib(6, ret);
+    int number = pyobj.Fib(6, ret);
     if (ret != PY_SUCCESS)
     {
         std::cout << "Fib Fail: " << ret << std::endl;
