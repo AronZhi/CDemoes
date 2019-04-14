@@ -10,10 +10,11 @@ public:
     HelloPython(const std::string& modulePath, const std::string& moduleName);
     ~HelloPython();
     
-    int8_t Create();
+    PyErr Create();
     void Delete();
 
-    int8_t Hello();
+    PyErr Hello();
+    PyErr Fib(int index, int& number);
 
 private:
     std::string _modulePath;

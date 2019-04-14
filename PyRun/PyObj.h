@@ -4,19 +4,30 @@
 #include <string>
 #include <python3.6/Python.h>
 
+enum PyErr
+{
+        PY_SUCCESS = 0,
+        PY_FAIL = 1,
+        PY_NO_OBJ = 2,
+        PY_INITIAL_FAIL = 3,
+        PY_MODULE_ERR = 4,
+        PY_NO_DIC = 5,
+        PY_FUNC_ERR = 6
+};
+
 class PyObj
 {
 public:
     PyObj();
     virtual ~PyObj();
 
-    virtual int8_t Create() = 0;
+    virtual PyErr Create() = 0;
     virtual void Delete() = 0;
 
-    int8_t Excute(const std::string& funcName, PyObject* args);
+    PyErr Excute(const std::string& funcName, PyObject* args, PyObject*& ret);
 
 protected:
-    int8_t _CreateModule(const std::string& path, const std::string& fileName);
+    PyErr _CreateModule(const std::string& path, const std::string& fileName);
     void _DeleteModule();
 
 private:
