@@ -12,7 +12,7 @@ PyObj::~PyObj()
 
 }
 
-int8_t PyObj::Create(const std::string& path, const std::string& fileName)
+int8_t PyObj::_CreateModule(const std::string& path, const std::string& fileName)
 {
     Py_Initialize();
     if (!Py_IsInitialized())
@@ -35,30 +35,7 @@ int8_t PyObj::Create(const std::string& path, const std::string& fileName)
     return 0;
 }
 
-void PyObj::Delete()
+void PyObj::_DeleteModule()
 {
     Py_Finalize();
-}
-
-int8_t PyObj::Run(const std::string& funcName)
-{
-    if (!_obj)
-    {
-        return -1;
-    }
-        
-    PyObject* pDict = PyModule_GetDict(_obj);
-    if (!pDict)
-    {
-        return -2;
-    }
-    
-    PyObject* pFunc = PyDict_GetItemString(pDict, funcName.c_str());
-    if (!pFunc || !PyCallable_Check(pFunc))
-    {
-        return -3;
-    }
-    
-    PyObject_CallObject(pFunc, NULL);
-    return 0;
 }

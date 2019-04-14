@@ -10,12 +10,14 @@ public:
     PyObj();
     virtual ~PyObj();
 
-    int8_t Create(const std::string& path, const std::string& fileName);
-    void Delete();
+    virtual int8_t Create() = 0;
+    virtual void Delete() = 0;
 
-    int8_t Run(const std::string& funcName);
+protected:
+    int8_t _CreateModule(const std::string& path, const std::string& fileName);
+    void _DeleteModule();
 
-private:
+protected:
     PyObject* _obj;
 };
 

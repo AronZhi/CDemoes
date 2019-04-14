@@ -1,10 +1,10 @@
 #include <iostream>
-#include "PyObj.h"
+#include "HelloPython.h"
 
 int main()
 {
-    PyObj pyobj;
-    int8_t ret = pyobj.Create("/home/zyw/Documents/Demo/script", "HelloPython");
+    HelloPython pyobj("/home/zyw/Documents/Demo/script", "HelloPython");
+    int8_t ret = pyobj.Create();
     if (ret < 0)
     {
         std::cout << "create: " << ret << std::endl;
