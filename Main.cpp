@@ -10,7 +10,7 @@ int main()
         std::cout << "create: " << ret << std::endl;
     }
         
-    ret = pyobj.Run("Hello");
+    ret = pyobj.Hello();
     if (ret < 0)
     {
         std::cout << "run: " << ret << std::endl;

@@ -27,25 +27,7 @@ void HelloPython::Delete()
     _DeleteModule();
 }
 
-int8_t HelloPython::Run(const std::string& funcName)
+int8_t HelloPython::Hello()
 {
-    if (!_obj)
-    {
-        return -1;
-    }
-        
-    PyObject* pDict = PyModule_GetDict(_obj);
-    if (!pDict)
-    {
-        return -2;
-    }
-    
-    PyObject* pFunc = PyDict_GetItemString(pDict, funcName.c_str());
-    if (!pFunc || !PyCallable_Check(pFunc))
-    {
-        return -3;
-    }
-    
-    PyObject_CallObject(pFunc, NULL);
-    return 0;
+    return Excute("Hello", NULL);
 }

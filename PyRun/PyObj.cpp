@@ -39,3 +39,26 @@ void PyObj::_DeleteModule()
 {
     Py_Finalize();
 }
+
+int8_t PyObj::Excute(const std::string& funcName, PyObject* args)
+{
+    if (!_obj)
+    {
+        return -1;
+    }
+        
+    PyObject* pDict = PyModule_GetDict(_obj);
+    if (!pDict)
+    {
+        return -2;
+    }
+    
+    PyObject* pFunc = PyDict_GetItemString(pDict, funcName.c_str());
+    if (!pFunc || !PyCallable_Check(pFunc))
+    {
+        return -3;
+    }
+    
+    PyObject_CallObject(pFunc, args);
+    return 0;
+}

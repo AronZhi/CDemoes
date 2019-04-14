@@ -13,11 +13,13 @@ public:
     virtual int8_t Create() = 0;
     virtual void Delete() = 0;
 
+    int8_t Excute(const std::string& funcName, PyObject* args);
+
 protected:
     int8_t _CreateModule(const std::string& path, const std::string& fileName);
     void _DeleteModule();
 
-protected:
+private:
     PyObject* _obj;
 };
 

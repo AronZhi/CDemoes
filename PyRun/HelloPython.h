@@ -1,7 +1,6 @@
 #ifndef HELLO_PYTHON
 #define HELLO_PYTHON
 
-#include <string>
 #include "PyObj.h"
 
 class HelloPython : public PyObj
@@ -14,7 +13,7 @@ public:
     int8_t Create();
     void Delete();
 
-    int8_t Run(const std::string& funcName);
+    int8_t Hello();
 
 private:
     std::string _modulePath;
