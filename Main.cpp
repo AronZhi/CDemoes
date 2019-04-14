@@ -10,14 +10,14 @@ int main()
         std::cout << "create: " << ret << std::endl;
     }
         
-    ret = pyobj.Hello();
+    pyobj.Hello(ret);
     if (ret != PY_SUCCESS)
     {
         std::cout << "Hello Fail: " << ret << std::endl;
     }
 
     int number = 0;
-    ret = pyobj.Fib(6, number);
+    number = pyobj.Fib(6, ret);
     if (ret != PY_SUCCESS)
     {
         std::cout << "Fib Fail: " << ret << std::endl;

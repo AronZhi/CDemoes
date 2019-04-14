@@ -13,8 +13,8 @@ public:
     PyErr Create();
     void Delete();
 
-    PyErr Hello();
-    PyErr Fib(int index, int& number);
+    void Hello(PyErr& excuteResult);
+    int Fib(int index, PyErr& excuteResult);
 
 private:
     std::string _modulePath;

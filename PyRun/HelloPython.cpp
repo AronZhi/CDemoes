@@ -27,23 +27,24 @@ void HelloPython::Delete()
     _DeleteModule();
 }
 
-PyErr HelloPython::Hello()
+void HelloPython::Hello(PyErr& excuteResult)
 {
     PyObject* ret = NULL;
-    return Excute("Hello", NULL, ret);
+    excuteResult = Excute("Hello", NULL, ret);
 }
 
-PyErr HelloPython::Fib(int index, int& number)
+int HelloPython::Fib(int index, PyErr& excuteResult)
 {
     PyObject *pArg = Py_BuildValue("(i)", index);
     if (!pArg)
         return PY_FAIL;
 
     PyObject* ret = NULL;
-    PyErr execResult = Excute("Fib", pArg, ret);
-    if (execResult == PY_SUCCESS)
+    excuteResult = Excute("Fib", pArg, ret);
+    int number = 0;
+    if (excuteResult == PY_SUCCESS)
     {
         PyArg_Parse(ret, "i", &number);
     }
-    return execResult;
+    return number;
 }
