@@ -5,7 +5,7 @@
 
 void ExcutePyRun()
 {
-    HelloPython pyobj("/home/zyw/Documents/Demo/script", "HelloPython");
+    HelloPython pyobj("../../script", "HelloPython");
     PyErr ret = pyobj.Create();
     if (ret != PY_SUCCESS)
     {

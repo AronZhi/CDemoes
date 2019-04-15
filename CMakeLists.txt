@@ -7,12 +7,11 @@ INCLUDE_DIRECTORIES(PyRun) #添加头文件路径
 ADD_SUBDIRECTORY(PyRun) #添加子目录
 AUX_SOURCE_DIRECTORY(. DIR_SRCS) #添加目录
 
-AUX_SOURCE_DIRECTORY(/home/zyw/Public/PublicSource/boost/ BoostLibDir)
-AUX_SOURCE_DIRECTORY(/home/zyw/Public/PublicSource/glob/ glogLibDir)
+FIND_LIBRARY(GLOG_LIB glog ../PublicSource/glob/) # 
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14") #指定C++标准
 SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb") # Debug模式下的编译指令
 SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall") # Release模式下的编译指令
 
 ADD_EXECUTABLE(Demo ${DIR_SRCS})
-TARGET_LINK_LIBRARIES(Demo PyObj glog)
+TARGET_LINK_LIBRARIES(Demo PyObj ${GLOG_LIB})
