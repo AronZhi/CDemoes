@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../PyRun/ExcutePyRun.h
+
+/home/ubuntuk7/Public/Demo/Main.cpp
+iostream
+-
+ExcutePyRun.h
+/home/ubuntuk7/Public/Demo/ExcutePyRun.h
+

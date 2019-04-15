@@ -1,0 +1,6 @@
+/home/ubuntuk7/Public/Demo/build/Debug/CMakeFiles/rebuild_cache.dir
+/home/ubuntuk7/Public/Demo/build/Debug/CMakeFiles/Demo.dir
+/home/ubuntuk7/Public/Demo/build/Debug/CMakeFiles/edit_cache.dir
+/home/ubuntuk7/Public/Demo/build/Debug/PyRun/CMakeFiles/rebuild_cache.dir
+/home/ubuntuk7/Public/Demo/build/Debug/PyRun/CMakeFiles/PyObj.dir
+/home/ubuntuk7/Public/Demo/build/Debug/PyRun/CMakeFiles/edit_cache.dir
