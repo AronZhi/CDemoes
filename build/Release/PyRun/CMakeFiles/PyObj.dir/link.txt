@@ -1,0 +1,2 @@
+/usr/bin/ar qc libPyObj.a  CMakeFiles/PyObj.dir/ExcutePyRun.cpp.o CMakeFiles/PyObj.dir/HelloPython.cpp.o CMakeFiles/PyObj.dir/PyObj.cpp.o
+/usr/bin/ranlib libPyObj.a
