@@ -25,7 +25,7 @@ void ExcutePyRun()
     }
     else
     {
-        LOG(INFO) << "Fib number: " << ret << std::endl;
+        LOG(INFO) << "Fib number: " << number << std::endl;
     }
     
     pyobj.Delete();
