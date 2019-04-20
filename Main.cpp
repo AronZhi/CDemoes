@@ -1,8 +1,14 @@
 #include <iostream>
+#include <string>
 #include "ExcutePyRun.h"
 
-int main()
+int main(int argc, char** argv)
 {
-    ExcutePyRun();
+    if (argc != 2)
+        return -1;
+    
+    std::string target(argv[1]);
+    if (target == "python")
+        ExcutePyRun();
     return 0;
 }
