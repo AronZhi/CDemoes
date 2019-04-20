@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "ExcutePyRun.h"
+#include "ExcuteClient.h"
 
 int main(int argc, char** argv)
 {
@@ -10,5 +11,8 @@ int main(int argc, char** argv)
     std::string target(argv[1]);
     if (target == "python")
         ExcutePyRun();
+    else if (target == "client")
+        ExcuteClient();
+
     return 0;
 }
