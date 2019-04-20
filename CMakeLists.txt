@@ -4,10 +4,10 @@ PROJECT(Demo)
 
 INCLUDE_DIRECTORIES(PyRun) #添加头文件路径
 
-ADD_SUBDIRECTORY(PyRun) #添加子目录
 AUX_SOURCE_DIRECTORY(. DIR_SRCS) #添加目录
+ADD_SUBDIRECTORY(PyRun) #添加子目录
 
-FIND_LIBRARY(GLOG_LIB glog ../PublicSource/glob/) # 
+FIND_LIBRARY(GLOG_LIB glog ../PublicSource/glog/) #设置连接的库
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14") #指定C++标准
 SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb") # Debug模式下的编译指令
