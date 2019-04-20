@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++14  -O0 -Wall -g -ggdb   CMakeFiles/Demo.dir/Main.cpp.o  -o Demo -Wl,-rpath,/usr/local/lib PyRun/libPyObj.a /usr/local/lib/libglog.so /usr/lib/x86_64-linux-gnu/libpython3.6m.so 
