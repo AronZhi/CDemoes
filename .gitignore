@@ -1,5 +1,4 @@
 .vscode/
-script/
-Script/
+__pycache__/
 Build/
 build/
