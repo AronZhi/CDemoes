@@ -1,4 +1,5 @@
 .vscode/
-script/*cache*
-Build
-build
+script/
+Script/
+Build/
+build/
