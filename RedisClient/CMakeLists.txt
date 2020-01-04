@@ -1,0 +1,16 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10.0)
+PROJECT (RedisClient)
+
+INCLUDE_DIRECTORIES(../../CLib)
+
+FIND_LIBRARY(ACL_CPP lib_acl_cpp.a ../../CLib/acl_cpp/)
+FIND_LIBRARY(ACL lib_acl.a ../../CLib/acl/)
+
+SET(SOURCE main.cpp RedisClient.h RedisClient.cpp)
+
+ADD_DEFINITIONS(-D REDIS_LOG)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+ADD_EXECUTABLE(RedisClient ${SOURCE})
+
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${ACL_CPP} ${ACL} pthread)
